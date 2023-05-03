@@ -1,0 +1,64 @@
+@import "../bootstrap/functions";
+@import "../bootstrap/variables";
+@import "../bootstrap/mixins";
+@import "../partials/variables";
+
+.block-content-info {
+  background: linear-gradient(267.85deg, $accent-1 1.12%, $accent-2 99.87%);
+  overflow: hidden;
+  position: relative;
+
+  .inner-wrapper {
+    z-index: 1;
+  }
+
+  &:before, &:after {
+    display: block;
+    position: absolute;
+    content: "";
+    width: 207px;
+    height: 183px;
+  }
+
+  &:before {
+    background-color: $accent-1;
+    transform: translate(-50%, -50%);
+    top: 0;
+    left: 20%;
+    filter: blur(50px);
+  }
+
+  &:after {
+    background-color: $accent-2;
+    transform: translate(50%, 70%);
+    bottom: 0;
+    right: 35%;
+    filter: blur(100px);
+  }
+
+  .link {
+    &:hover {
+      background-color: $white;
+      color: $black;
+
+      &:after {
+        color: $black;
+      }
+    }
+  }
+
+  &.type-2 {
+    background: linear-gradient(267.85deg, $accent-2 1.12%, $accent-1 99.87%);
+
+    &:before {
+      background-color: $accent-2;
+      filter: blur(100px);
+    }
+
+    &:after {
+      background-color: $accent-1;
+      filter: blur(50px);
+    }
+  }
+
+}

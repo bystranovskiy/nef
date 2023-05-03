@@ -1,0 +1,384 @@
+header {
+  background-color: $white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  transition: background-color .5s, transform 1s;
+
+  &.sticky {
+    //background: $main;
+  }
+
+  &.hidden {
+    @include media-breakpoint-down(md) {
+      transform: translateY(-100%);
+    }
+  }
+
+  .custom-logo {
+    display: block;
+    width: auto;
+    max-height: 40px;
+    position: relative;
+    z-index: 1;
+    @include media-breakpoint-up(xl) {
+      max-height: 48px;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 12px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 14px;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    font-size: 16px;
+  }
+
+  .inner-wrapper {
+    border-bottom: 1px solid $brd;
+  }
+
+  .btn {
+    min-width: 0;
+  }
+
+  .link {
+    color: $text;
+
+    &:hover {
+      color: $accent-2;
+    }
+
+    &:after {
+      color: $accent-2;
+    }
+  }
+}
+
+.menu-header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  @include media-breakpoint-up(lg) {
+    gap: 10px;
+    flex-direction: row;
+  }
+
+  @include media-breakpoint-up(xl) {
+    gap: 30px;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    gap: 40px;
+  }
+
+  > li {
+    > a {
+      line-height: 40px;
+      white-space: nowrap;
+      @include media-breakpoint-up(xl) {
+        line-height: 48px;
+      }
+    }
+  }
+
+  .menu-item {
+    &.current-menu-ancestor, &.current-menu-item {
+      > a {
+        color: $accent-2;
+      }
+    }
+  }
+
+  a {
+    text-decoration: none;
+    cursor: pointer;
+    color: $text;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .035em;
+    display: inline-block;
+
+    &:hover {
+      color: $accent-2;
+    }
+  }
+
+  .menu-item-has-children {
+    position: relative;
+
+    > a {
+      position: relative;
+      padding-right: .8em;
+
+      &:after {
+        font-family: 'nef';
+        content: '\e808';
+        color: $text-brightest;
+        display: inline-block;
+        font-size: .3em;
+        right: 0;
+        position: absolute;
+        transition: .3s;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    &:hover {
+      > a {
+
+        &:after {
+          transform: translateY(-50%) scaleY(-1);
+          color: $accent-2;
+        }
+      }
+
+      .sub-menu {
+        display: block;
+        @include media-breakpoint-up(lg) {
+          opacity: 1;
+          visibility: visible;
+          transition: opacity .5s, visibility 0s 0s;
+        }
+      }
+    }
+  }
+
+  .sub-menu {
+    list-style: none;
+    flex-direction: column;
+    margin: 0 0 1rem;
+    background-color: $bg-2;
+    border: 1px solid $brd;
+    border-bottom-left-radius: $brd-rad-m;
+    border-bottom-right-radius: $brd-rad-m;
+    padding: 12px;
+    display: none;
+
+    @include media-breakpoint-up(lg) {
+      display: block;
+      position: absolute;
+      opacity: 0;
+      transition: opacity .5s, visibility 0s .5s;
+      visibility: hidden;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 100%;
+      margin: 1rem 0 0;
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 1rem;
+        top: -1rem;
+      }
+    }
+
+    a {
+      text-transform: none;
+      padding: .8em;
+      //display: block;
+      white-space: nowrap;
+    }
+  }
+
+}
+
+
+.mobile-menu-toggle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 5px 0;
+  background-color: $accent-2;
+  position: relative;
+  cursor: pointer;
+
+  span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 8px;
+    background: $white;
+    opacity: 1;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+
+    &:nth-child(even) {
+      left: 50%;
+      border-radius: 0 1px 1px 0;
+    }
+
+    &:nth-child(odd) {
+      left: 7px;
+      border-radius: 1px 0 0 1px;
+    }
+
+    &:nth-child(1), &:nth-child(2) {
+      top: 10px;
+    }
+
+    &:nth-child(3), &:nth-child(4) {
+      top: 14px;
+    }
+
+    &:nth-child(5), &:nth-child(6) {
+      top: 18px;
+    }
+  }
+}
+
+.mobile-menu {
+  @include media-breakpoint-down(md) {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .5s, visibility 0s .5s;
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    text-align: center;
+
+    a {
+      display: inline-block;
+    }
+  }
+}
+
+.mobile-menu-opened {
+
+  @include media-breakpoint-down(md) {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+
+    .mobile-menu {
+      visibility: visible;
+      opacity: 1;
+      transition: opacity .5s, visibility 0s;
+    }
+  }
+
+
+  .mobile-menu-toggle {
+    span {
+      &:nth-child(1), &:nth-child(6) {
+        transform: rotate(45deg);
+      }
+
+      &:nth-child(2), &:nth-child(5) {
+        transform: rotate(-45deg);
+      }
+
+      &:nth-child(1) {
+        left: 8px;
+        top: 11px;
+      }
+
+      &:nth-child(2) {
+        left: calc(50% - 1px);
+        top: 11px;
+      }
+
+      &:nth-child(3) {
+        left: -8px;
+        opacity: 0;
+      }
+
+      &:nth-child(4) {
+        left: 100%;
+        opacity: 0;
+      }
+
+      &:nth-child(5) {
+        left: 8px;
+        top: 17px;
+      }
+
+      &:nth-child(6) {
+        left: calc(50% - 1px);
+        top: 17px;
+      }
+    }
+  }
+}
+
+
+.search-form {
+  position: relative;
+
+  button {
+    height: 3em;
+    width: 3em;
+    border: 0;
+    background-color: transparent;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+    color: $accent-1;
+    transition: color .3s;
+
+    &:before {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: .8em;
+    }
+
+    &:hover {
+      color: $accent-2;
+    }
+  }
+
+  .icon-cancel {
+    height: 3em;
+    width: 3em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: $text-brightest;
+
+    &:before {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: .8em;
+    }
+
+    &:hover {
+      color: $text;
+    }
+  }
+
+  input {
+    display: block;
+    border: 0;
+    height: 3em;
+    padding: .625em .625em .625em 3em;
+    width: 100%;
+
+    &::placeholder {
+      color: $text-brightest;
+    }
+
+  }
+
+}

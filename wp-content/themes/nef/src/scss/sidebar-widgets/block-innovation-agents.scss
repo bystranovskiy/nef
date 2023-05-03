@@ -1,0 +1,33 @@
+@import "../bootstrap/functions";
+@import "../bootstrap/variables";
+@import "../bootstrap/mixins";
+@import "../partials/variables";
+
+.block-innovation-agents {
+  background-size: 5px;
+  background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5Ojf/2wBDAQoKCg0MDRoPDxo3JR8lNzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzf/wgARCAAKAAoDAREAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEH/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAAA2YoB/8QAFhAAAwAAAAAAAAAAAAAAAAAAESAh/9oACAEBAAE/AKU//8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPwAf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPwAf/9k=');
+
+  .agents-list {
+
+    .circle-elem {
+      width: 70px;
+      color: $white;
+      aspect-ratio: 1/1;
+      font-size: 18px;
+      background-color: $accent-1;
+      border: 1px solid $white;
+      transition: border-color .3s, transform .3s;
+
+      &:hover {
+        border-color: $accent-2;
+        transform: scale(1.1);
+      }
+
+      &:not(:first-child) {
+        margin-left: -20px;
+      }
+
+    }
+  }
+
+}

@@ -1,0 +1,57 @@
+@import "../bootstrap/functions";
+@import "../bootstrap/variables";
+@import "../bootstrap/mixins";
+@import "../partials/variables";
+
+.block-activities {
+  .activity-item {
+    &-date {
+      padding: 10px;
+      width: 72px;
+      height: 72px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+
+      &-day {
+        font-weight: 500;
+        font-size: 36px;
+        color: $text;
+        transition: color .3s;
+      }
+
+      &-month {
+        color: $text-lighter;
+        font-size: 14px;
+      }
+    }
+
+    &-person {
+      color: $text-lighter;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    &-title {
+      color:$text;
+      font-weight: 500;
+      transition: color .3s;
+    }
+
+    &:hover {
+      .activity-item{
+        &-date {
+          &-day {
+            color: $accent-2;
+          }
+        }
+        &-title {
+          color: $accent-2;
+        }
+      }
+    }
+  }
+
+}

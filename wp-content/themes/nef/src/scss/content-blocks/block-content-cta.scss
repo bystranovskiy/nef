@@ -1,0 +1,38 @@
+@import "../bootstrap/functions";
+@import "../bootstrap/variables";
+@import "../bootstrap/mixins";
+@import "../partials/variables";
+
+.block-content-cta {
+  background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEiIGhlaWdodD0iOTEiIHZpZXdCb3g9IjAgMCA1MSA5MSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTAgOTFWMEg1MVY5MUwyNi41IDY3Ljk5NDRMMCA5MVoiIGZpbGw9IiNGNzZDMkUiLz4KPC9zdmc+Cg==') no-repeat top right 32px,
+  url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5Ojf/2wBDAQoKCg0MDRoPDxo3JR8lNzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzf/wgARCAAKAAoDAREAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEH/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAAA2YoB/8QAFhAAAwAAAAAAAAAAAAAAAAAAESAh/9oACAEBAAE/AKU//8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPwAf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPwAf/9k=');
+  background-size: 25px 45px, 5px;
+  padding: 50px 20px;
+  overflow: hidden;
+  @include media-breakpoint-up(lg) {
+    padding: 100px 50px;
+    background-size: 50px 90px, 5px;
+  }
+
+  &:before, &:after {
+    position: absolute;
+    width: 275px;
+    height: 282px;
+    content: "";
+    opacity: 0.3;
+    filter: blur(100px);
+  }
+
+  &:before {
+    bottom: 0;
+    left: 0;
+    background-color: $accent-1;
+  }
+
+  &:after {
+    bottom: 0;
+    left: 0;
+    transform: translate(50%, -50%);
+    background-color: $accent-2;
+  }
+}

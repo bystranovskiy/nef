@@ -1,0 +1,69 @@
+@import "../bootstrap/functions";
+@import "../bootstrap/variables";
+@import "../bootstrap/mixins";
+@import "../partials/variables";
+
+.section-nef-cases {
+
+  .case-item {
+    .circle-elem {
+      width: 64px;
+    }
+
+    .link {
+      transition: color .3s;
+      text-transform: none;
+      font-weight: 500;
+      font-size: 20px;
+      color: $black;
+    }
+  }
+
+  .block-cases-type-1 {
+    link {
+      &:hover {
+        .link {
+          color: $accent-2;
+        }
+      }
+    }
+  }
+
+  .block-cases-type-2 {
+    .case-item {
+      overflow: hidden;
+      background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5Ojf/2wBDAQoKCg0MDRoPDxo3JR8lNzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzf/wgARCAAKAAoDAREAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEH/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAAA2YoB/8QAFhAAAwAAAAAAAAAAAAAAAAAAESAh/9oACAEBAAE/AKU//8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPwAf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPwAf/9k=');
+      background-size: 5px;
+      position: relative;
+
+      &:before, &:after {
+        content: "";
+        position: absolute;
+        width: 280px;
+        height: 280px;
+        opacity: 0.2;
+        filter: blur(100px);
+        pointer-events: none;
+      }
+
+      &:before {
+        top: -100px;
+        left: -100px;
+        background-color: $accent-1;
+      }
+
+      &:after {
+        top: 30px;
+        left: 0;
+        background-color: rgba($accent-2, .23);
+      }
+    }
+
+    .link {
+      &:hover {
+        color: $accent-1;
+      }
+    }
+  }
+
+}

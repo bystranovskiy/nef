@@ -1,0 +1,45 @@
+@import "../bootstrap/functions";
+@import "../bootstrap/variables";
+@import "../bootstrap/mixins";
+@import "../partials/variables";
+
+.section-nef-faq {
+  .faq-question {
+    cursor: pointer;
+    transition: color .3s;
+
+    &:before, &:after {
+      content: "";
+      position: absolute;
+      top: 15px;
+      height: 2px;
+      width: 14px;
+      right: 1rem;
+      background-color: $black;
+      transition: background-color .3s, transform .3s;
+    }
+
+    &:after {
+      transform: rotate(90deg);
+    }
+
+    &:hover, &.active {
+      color: $accent-2;
+
+      &:before, &:after {
+        background-color: $accent-2;
+      }
+    }
+
+    &.active {
+      &:before {
+        transform: rotate(180deg);
+      }
+
+      &:after {
+        transform: rotate(360deg);
+      }
+    }
+
+  }
+}

@@ -1,0 +1,31 @@
+@import "../bootstrap/functions";
+@import "../bootstrap/variables";
+@import "../bootstrap/mixins";
+@import "../partials/variables";
+
+.block-statistics {
+  &:before, &:after {
+    content: "";
+    position: absolute;
+    width: 192px;
+    height: 192px;
+    opacity: .7;
+    filter: blur(100px);
+  }
+
+  &:before {
+    background-color: $accent-2;
+    left: -54px;
+    bottom: 100px;
+  }
+
+  &:after {
+    background-color: $accent-1;
+    left: 30px;
+    bottom: -100px;
+  }
+
+  .statistic-item {
+    z-index: 1;
+  }
+}

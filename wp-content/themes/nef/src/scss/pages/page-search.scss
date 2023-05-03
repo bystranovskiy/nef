@@ -1,0 +1,32 @@
+@import "../bootstrap/functions";
+@import "../bootstrap/variables";
+@import "../bootstrap/mixins";
+@import "../partials/variables";
+
+.post-categories-filter {
+
+  .post-category {
+    &.active {
+      position: relative;
+
+      &:after {
+        position: absolute;
+        top: -6px;
+        right: -6px;
+        content: "✕";
+        width: 14px;
+        height: 14px;
+        text-align: center;
+        line-height: 12px;
+        border-radius: 50%;
+        background-color: $white;
+        font-weight: 600;
+        font-size: 8px;
+        color: $black;
+        border: 1px solid $text-lighter;
+      }
+    }
+  }
+
+}
+

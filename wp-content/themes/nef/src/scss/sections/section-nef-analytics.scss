@@ -1,0 +1,43 @@
+@import "../bootstrap/functions";
+@import "../bootstrap/variables";
+@import "../bootstrap/mixins";
+@import "../partials/variables";
+
+.section-nef-analytics {
+  .analytics-list {
+  }
+
+  .analytics-item {
+    $i: 0;
+    @each $color in $color-pastel {
+      $i: $i + 1;
+      &:nth-child(#{length($color-pastel)}n + #{$i}) {
+        .post-item {
+          background-color: $color;
+        }
+      }
+    }
+
+  }
+
+  .post-item {
+    color: $text;
+
+    &:hover {
+      color: $text;
+    }
+
+    .link {
+      color: $text;
+    }
+
+    .link, .post-title {
+      transition: color .3s;
+
+      &:hover {
+        color: $accent-2;
+      }
+    }
+
+  }
+}

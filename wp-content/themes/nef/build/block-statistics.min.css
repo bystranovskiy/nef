@@ -1,0 +1,2 @@
+.block-statistics:before,.block-statistics:after{content:"";position:absolute;width:192px;height:192px;opacity:.7;filter:blur(100px)}.block-statistics:before{background-color:#F76C2E;left:-54px;bottom:100px}.block-statistics:after{background-color:#0C4088;left:30px;bottom:-100px}.block-statistics .statistic-item{z-index:1}
+

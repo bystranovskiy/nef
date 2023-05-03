@@ -1,0 +1,5 @@
+/wp-config.php
+.idea
+.DS_Store
+/wp-content/cache/
+/wp-content/themes/nef/node_modules/

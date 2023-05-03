@@ -1,0 +1,241 @@
+@import "../bootstrap/functions";
+@import "../bootstrap/variables";
+@import "../bootstrap/mixins";
+@import "../partials/variables";
+
+.case-header {
+  .post-thumbnail {
+    aspect-ratio: 1380 / 590;
+  }
+}
+
+.sticky-sidebar {
+  @include media-breakpoint-up(lg) {
+    position: sticky;
+    top: 110px;
+  }
+}
+
+.table-of-content {
+  counter-reset: section;
+
+  .menu {
+    counter-reset: css-counters 0;
+    .menu {
+      margin-left: 1rem;
+    }
+  }
+
+  li {
+
+    a {
+      font-size: 18px;
+      font-weight: 500;
+      color: $text;
+      align-items: center;
+      transition: background-color .3s;
+      line-height: 1.3;
+
+      &:hover {
+        background-color: $bg-3;
+      }
+
+      &:before {
+        counter-increment: css-counters;
+        content: counters(css-counters, ".") ". ";
+        //width: 34px;
+        //min-width: 34px;
+        margin-right: 1em;
+        font-weight: 400;
+      }
+    }
+
+    &:nth-child(-n + 9) {
+      a:before {
+        //content: "0" counters(css-counters, ".") ". ";
+      }
+    }
+
+
+  }
+}
+
+.post-content {
+
+  [id^="h-"]:before {
+    content: '';
+    display: block;
+    visibility: hidden;
+    height: 75px;
+    margin-top: -75px;
+    @include media-breakpoint-up(lg) {
+      height: 85px;
+      margin-top: -85px;
+    }
+  }
+
+  .wp-block-image {
+    figcaption {
+      text-align: center;
+      font-size: 14px;
+      color: $text-lighter;
+    }
+  }
+
+  blockquote, .wp-block-quote {
+    background-color: $bg-3;
+    margin: 0 0 20px;
+    padding: 20px 30px;
+    border-radius: $brd-rad-m;
+
+    p {
+      padding-left: 20px;
+    }
+
+    p, ul, ol {
+      position: relative;
+      font-size: 18px;
+      font-weight: 500;
+      color: $text-lighter;
+
+      &:last-child {
+        margin: 0;
+      }
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background-color: $accent-2;
+        border-radius: 2px;
+      }
+    }
+
+    cite {
+      font-size: 14px;
+    }
+  }
+
+}
+
+.share-links {
+  position: sticky;
+  z-index: 1;
+  top: 110px;
+
+  .share-link {
+    cursor: pointer;
+    position: relative;
+    transition: .3s;
+    color: $text;
+    overflow: visible;
+    width: 36px;
+
+    @include media-breakpoint-up(md) {
+      width: 48px;
+    }
+
+    &:before {
+      display: block;
+      margin: 0;
+    }
+
+    .tooltip {
+      visibility: hidden;
+      background-color: $text;
+      color: $white;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px 10px;
+      line-height: 1;
+      position: absolute;
+      z-index: 1;
+      opacity: 0;
+      transition: opacity .5s;
+      bottom: calc(100% + 7px);
+      left: 50%;
+      font-size: 12px;
+      transform: translateX(-50%);
+      white-space: nowrap;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: $text transparent transparent transparent;
+      }
+    }
+
+    &:hover {
+      background-color: $text;
+
+      &:before {
+        color: $white;
+      }
+
+      .tooltip {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.col-content {
+  max-width: calc(100% - 52px);
+  @include media-breakpoint-up(md) {
+    max-width: calc(100% - 80px);
+  }
+
+}
+
+.post-rate {
+  white-space: nowrap;
+  display: flex;
+  gap: 20px;
+
+  .post-rate-item {
+    display: flex;
+    align-items: center;
+    color: $text;
+    transition: color .3s;
+    font-size: 20px;
+    font-weight: 500;
+
+    .circle-elem {
+      display: flex;
+      margin-right: 10px;
+      transition: .3s;
+      width: 48px;
+    }
+
+    &.no-rate {
+      color: $text-brightest;
+    }
+
+  }
+
+  &:not(.post-rated) {
+    .circle-elem {
+      cursor: pointer;
+
+      &:hover {
+        color: $white;
+        background-color: $accent-1;
+        border-color: $accent-1;
+      }
+    }
+  }
+
+}
+
+.author-info {
+
+}

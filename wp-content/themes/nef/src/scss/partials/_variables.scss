@@ -1,0 +1,73 @@
+// Fonts
+$font: 'Montserrat', sans-serif;
+
+// Colors
+$black: #000000;
+$white: #ffffff;
+$text: $black;
+$text-lighter: #666; // rgba($black, .6);
+$text-brightest: #b2b2b2; // rgba($black, .3);
+
+$accent-1: #0C4088;
+$accent-2: #F76C2E;
+$accent-3: #8ADFE8;
+
+$brd: #E7E7E7;
+$bg-1: #F1F1F1;
+$bg-2: #FBFBFB;
+$bg-3: #F5F5F5;
+$footer-bg: #143B6D;
+
+// Pastel colors of cards
+$pastel-1: #ECF1E0;
+$pastel-2: #FAF0EC;
+$pastel-3: #E1EEF1;
+$pastel-4: #E9E8E8;
+$pastel-5: #DEE0F0;
+$pastel-6: #FAF8EF;
+
+$color-pastel: (
+        $pastel-1,
+        $pastel-2,
+        $pastel-3,
+        $pastel-4,
+        $pastel-5,
+        $pastel-6,
+);
+
+// Border-radius sizes
+$brd-rad-l: 18px;
+$brd-rad-m: 8px;
+$brd-rad-s: 4px;
+
+// Tags colors
+$item-1-bg: rgba(#008c5a, .06);
+$item-1-brd: rgba(#008c5a, .18);
+
+$item-2-bg: rgba(#A67FF5, .1);
+$item-2-brd: rgba(#A67FF5, .24);
+
+$item-3-bg: rgba(#F76C2E, .07);
+$item-3-brd: rgba(#F76C2E, .31);
+
+$item-4-bg: rgba(#0C4088, .07);
+$item-4-brd: rgba(#0C4088, .31);
+
+$item-5-bg: rgba(#FCB614, .07);
+$item-5-brd: rgba(#FCB614, .31);
+
+$item-6-bg: rgba(#61E900, .07);
+$item-6-brd: rgba(#61E900, .31);
+
+$item-7-bg: rgba(#D9D9D9, .4);
+$item-7-brd: rgba(#575757, .16);
+
+$color-tags: (
+        $item-1-brd:$item-1-bg,
+        $item-2-brd:$item-2-bg,
+        $item-3-brd:$item-3-bg,
+        $item-4-brd:$item-4-bg,
+        $item-5-brd:$item-5-bg,
+        $item-6-brd:$item-6-bg,
+        $item-7-brd:$item-7-bg,
+)

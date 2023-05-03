@@ -1,0 +1,81 @@
+@import "../bootstrap/functions";
+@import "../bootstrap/variables";
+@import "../bootstrap/mixins";
+@import "../partials/variables";
+
+.section-nef-form {
+  .wpcf7 {
+    max-width: 620px;
+    margin: 0 auto;
+
+    .wpcf7-not-valid-tip {
+      display: none;
+    }
+
+    .wpcf7-form-control-wrap {
+      display: block;
+      margin: 0 0 1rem;
+    }
+
+    label {
+      display: block;
+      color: $text;
+      font-weight: 500;
+    }
+
+    .wpcf7-form-control {
+      display: block;
+      margin: 5px 0 25px;
+
+      &.wpcf7-text, &.wpcf7-mask, &.wpcf7-textarea {
+        display: block;
+        border-radius: $brd-rad-m;
+        border: 1px solid $brd;
+        background-color: $white;
+        padding: 1rem;
+        font-weight: normal;
+        width: 100%;
+        transition: border-color .3s;
+
+        &.wpcf7-not-valid {
+          border-color: $accent-2;
+        }
+      }
+
+    }
+
+    .wpcf7-checkbox {
+      .wpcf7-list-item {
+        display: block;
+        margin: 10px 0;
+
+        label {
+          cursor: pointer;
+        }
+
+        input[type="checkbox"] {
+          width: 18px;
+          height: 18px;
+          display: inline-block;
+          vertical-align: middle;
+          margin: 0 5px 0 0;
+          transition: border-color .3s;
+          border: 1px solid $brd;
+          border-radius: $brd-rad-s;
+          //-webkit-appearance: none;
+          background-color: $white;
+          cursor: pointer;
+        }
+      }
+
+      &.wpcf7-not-valid {
+        input[type="checkbox"] {
+          border-color: $accent-2;
+        }
+      }
+    }
+
+  }
+
+
+}

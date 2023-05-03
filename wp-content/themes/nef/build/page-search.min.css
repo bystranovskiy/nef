@@ -1,0 +1,2 @@
+.post-categories-filter .post-category.active{position:relative}.post-categories-filter .post-category.active:after{position:absolute;top:-6px;right:-6px;content:"✕";width:14px;height:14px;text-align:center;line-height:12px;border-radius:50%;background-color:#fff;font-weight:600;font-size:8px;color:#000;border:1px solid #666}
+

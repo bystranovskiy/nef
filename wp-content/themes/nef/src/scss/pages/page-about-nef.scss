@@ -1,0 +1,45 @@
+@import "../bootstrap/functions";
+@import "../bootstrap/variables";
+@import "../bootstrap/mixins";
+@import "../partials/variables";
+
+.section-our-team {
+  .team-member {
+    max-width: 260px;
+    @include media-breakpoint-up(lg) {
+      max-width: 310px;
+    }
+  }
+}
+
+.partnery {
+
+  .partnery-item {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: $text-brightest;
+    height: 100%;
+    transition: color .5s;
+
+    img {
+      height: 32px;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+      transition: filter .5s;
+      filter: grayscale(1);
+    }
+
+    &:hover {
+      img {
+        filter: grayscale(0);
+      }
+
+      color: $text;
+    }
+  }
+
+
+}

@@ -1,0 +1,59 @@
+@import "../bootstrap/functions";
+@import "../bootstrap/variables";
+@import "../bootstrap/mixins";
+@import "../partials/variables";
+
+
+.block-contact-me {
+  background: linear-gradient(263.05deg, #0C4088 0%, #F76C2E 102.08%);
+}
+
+.post-agents-carousel {
+
+  .slick-track {
+    display: flex;
+    min-width: 100%;
+  }
+
+  .slick-slide {
+    height: auto;
+    float: none;
+    flex: none;
+  }
+
+  .slick-dots {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+
+    li {
+      border-radius: 50%;
+      width: 10px;
+      height: 10px;
+      background-color: $bg-3;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+      transition: background-color .3s;
+
+      &:hover {
+        background-color: $text-brightest;
+      }
+
+      button {
+        visibility: hidden;
+      }
+
+      &.slick-active {
+        background-color: $text-lighter;
+      }
+
+      &:only-child {
+        display: none;
+      }
+    }
+  }
+}

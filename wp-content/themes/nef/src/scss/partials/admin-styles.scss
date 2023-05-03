@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+@import "../../../src/fonts/fontello/css/nef.css";
+
+@import "../partials/variables";
+@import "../partials/mixins";
+
+html :where(.wp-block) {
+  max-width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.block-editor-block-list__layout {
+  overflow: hidden;
+}
+
+.block-editor-block-list__layout .block-editor-block-list__block {
+  position: initial;
+}
+
+.wp-block-post-content {
+
+  ul, ol {
+    li {
+      overflow: visible;
+    }
+  }
+
+  .wp-block-image {
+    figcaption {
+      text-align: center;
+      font-size: 14px;
+      color: $text-lighter;
+    }
+  }
+
+  blockquote, .wp-block-quote {
+    background-color: $bg-3;
+    margin: 0 0 20px;
+    padding: 20px 30px;
+    border-radius: $brd-rad-m;
+
+    p {
+      padding-left: 20px;
+    }
+
+    p, ul, ol {
+      position: relative;
+      font-size: 18px;
+      font-weight: 500;
+      color: $text-lighter;
+
+      &:last-child {
+        margin: 0;
+      }
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background-color: $accent-2;
+        border-radius: 2px;
+      }
+    }
+
+    cite {
+      font-size: 14px;
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  @import "../bootstrap/bootstrap";
+  font-family: $font;
+  font-weight: 400;
+  color: $text;
+  line-height: 1.5;
+  @import "../partials/general";
+
+}

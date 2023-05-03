@@ -1,0 +1,2 @@
+.section-our-team .team-member{max-width:260px}@media (min-width: 992px){.section-our-team .team-member{max-width:310px}}.partnery .partnery-item{display:block;font-size:14px;font-weight:500;line-height:1.2;color:#b2b2b2;height:100%;transition:color .5s}.partnery .partnery-item img{height:32px;width:auto;max-width:100%;object-fit:contain;transition:filter .5s;filter:grayscale(1)}.partnery .partnery-item:hover{color:#000}.partnery .partnery-item:hover img{filter:grayscale(0)}
+

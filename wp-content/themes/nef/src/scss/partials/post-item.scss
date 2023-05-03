@@ -1,0 +1,261 @@
+@import "../bootstrap/functions";
+@import "../bootstrap/variables";
+@import "../bootstrap/mixins";
+@import "../partials/variables";
+
+.post-item {
+  height: 100%;
+  padding: 15px 10px;
+
+  .post-date {
+    font-size: 12px;
+    color: $text-lighter;
+    margin-top: 15px;
+  }
+
+  .post-title {
+    color: $text;
+
+    &:hover {
+      color: $accent-2;
+    }
+  }
+}
+
+.post-permalink-img {
+  background-color: $accent-2;
+  aspect-ratio: 420/250;
+
+  .post-thumbnail {
+    transition: opacity .5s, transform 1s;
+  }
+
+  &:hover {
+    .post-thumbnail {
+      opacity: .7;
+      transform: scale(1.1);
+    }
+  }
+}
+
+.lead-post {
+  .post-permalink-img {
+    @include media-breakpoint-only(md) {
+      aspect-ratio: 420/170;
+    }
+  }
+}
+
+.post-agents {
+  margin: -26px 0 0 10px;
+
+  a {
+    border: 1px solid $white;
+    transition: border-color .5s, transform .5s;
+    z-index: 1;
+
+    &:not(:first-child) {
+      margin-left: -15px;
+    }
+
+    &:hover {
+      border-color: $accent-2;
+      transform: scale(1.1);
+    }
+  }
+}
+
+.post-excerpt {
+  color: $text-lighter;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 14px;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 16px;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.agent-info {
+  .circle-elem {
+    width: 64px;
+  }
+}
+
+.agent-position {
+  color: $text-lighter;
+}
+
+.post-categories {
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  .inner-wrapper {
+    gap: 5px;
+  }
+
+  input {
+    &:not(:checked) {
+      + label {
+        &:before {
+          content: "+";
+        }
+
+        ~ .post-category {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.post-category, .post-category-toggle {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: -0.3px;
+  border-radius: 12px;
+  border: 1px solid $brd;
+  line-height: 22px;
+  height: 24px;
+  white-space: nowrap;
+  font-weight: 500;
+  color: $text;
+  transition: background-color .3s, border-color .3s;
+
+  &:hover {
+    color: inherit;
+  }
+}
+
+.post-category {
+  padding: 0 8px;
+  $i: 0;
+  @each $item-brd, $item-bg in $color-tags {
+    $i: $i + 1;
+    &:nth-child(#{length($color-tags)}n + #{$i}) {
+      background-color: $item-bg;
+      border-color: $item-brd;
+
+      &:hover {
+        background-color: $item-brd;
+      }
+
+    }
+  }
+}
+
+.post-category-toggle {
+  width: 24px;
+  min-width: 24px;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  background-color: $item-7-bg;
+  border-color: $item-7-brd;
+  order: 999;
+
+  &:hover {
+    background-color: $item-7-brd;
+  }
+
+  &:before {
+    content: "-";
+  }
+}
+
+.community-item {
+  $i: 0;
+  @each $color in $color-pastel {
+    $i: $i + 1;
+    &:nth-child(#{length($color-pastel)}n + #{$i}) {
+      .post-item {
+        background-color: $color;
+      }
+    }
+  }
+
+  .post-category {
+    border-color: $white;
+    background-color: $white;
+
+    &:hover {
+      background-color: $item-7-bg;
+      border-color: $item-7-brd;
+    }
+  }
+
+
+}
+
+.post-infrastructure {
+  .link {
+    transition: color .3s;
+  }
+
+  &:hover {
+    .link {
+      color: $accent-2;
+    }
+
+    .post-thumbnail {
+      opacity: .7;
+      transform: scale(1.1);
+    }
+  }
+}
+
+.section-nef-posts {
+  .post-infrastructure {
+    .post-permalink-img {
+      aspect-ratio: 660/280;
+    }
+  }
+}
+
+.nav-links {
+  display: flex;
+  gap: 5px;
+  margin-top: 16px;
+  justify-content: center;
+
+  .page-numbers {
+    width: 40px;
+    height: 40px;
+    border-radius: $brd-rad-s;
+    transition: color .3s, background-color .3s;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $accent-2;
+      color: $white;
+    }
+
+    &.current {
+      color: $white;
+      background-color: $black;
+      cursor: auto;
+    }
+  }
+}
+
+.ajax-pagination {
+  position: relative;
+  transition: opacity .5s;
+
+  &.loading {
+    pointer-events: none;
+    opacity: .5;
+  }
+}

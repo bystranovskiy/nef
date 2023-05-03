@@ -1,0 +1,277 @@
+html {
+  font-family: sans-serif;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+html, body {
+  width: 100%;
+  //overflow-x: hidden;
+}
+
+body {
+  font-family: $font;
+  font-weight: 400;
+  color: $text;
+  line-height: 1.5;
+  @include custom-scrollbar;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 72px;
+  @include media-breakpoint-up(lg) {
+    padding-top: 80px;
+  }
+}
+
+main {
+  max-width: 100%;
+  flex: auto;
+}
+
+.home main {
+  overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 500;
+  margin: 0 0 .5em;
+  line-height: 1.125;
+  letter-spacing: -.03em;
+}
+
+h1, .h1 {
+  font-size: 36px;
+  @include media-breakpoint-up(sm) {
+    font-size: 48px;
+  }
+  @include media-breakpoint-up(lg) {
+    font-size: 68px;
+  }
+}
+
+h2, .h2 {
+  font-size: 24px;
+  @include media-breakpoint-up(sm) {
+    font-size: 36px;
+  }
+  @include media-breakpoint-up(lg) {
+    font-size: 48px;
+  }
+}
+
+h3, .h3 {
+  font-size: 20px;
+  @include media-breakpoint-up(sm) {
+    font-size: 24px;
+  }
+  @include media-breakpoint-up(lg) {
+    font-size: 36px;
+  }
+}
+
+h4, .h4 {
+  font-size: 18px;
+  @include media-breakpoint-up(sm) {
+    font-size: 20px;
+  }
+  @include media-breakpoint-up(lg) {
+    font-size: 24px;
+  }
+}
+
+h5, .h5 {
+  font-size: 16px;
+  @include media-breakpoint-up(sm) {
+    font-size: 18px;
+  }
+  @include media-breakpoint-up(lg) {
+    font-size: 20px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $accent-1;
+  transition: color .3s;
+
+  &:hover {
+    color: $accent-2;
+  }
+}
+
+p {
+  margin: 0 0 16px;
+}
+
+ul.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.link {
+  letter-spacing: .035em;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  color: $accent-1;
+
+  &:after {
+    content: '\e800';
+    font-family: 'nef';
+    display: inline-block;
+    margin-left: .8em;
+    color: $text;
+  }
+
+  &:hover {
+    color: $accent-2;
+  }
+
+}
+
+.responsive-image {
+  height: auto;
+  max-width: 100%;
+  display: inline-block;
+}
+
+.cover-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.circle-elem {
+  border-radius: 50%;
+  overflow: hidden;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.brd-top {
+  border-top: 1px solid $brd;
+}
+
+.brd-bottom {
+  border-bottom: 1px solid $brd;
+}
+
+.brd {
+  border: 1px solid $brd;
+}
+
+.bg-1 {
+  background-color: $bg-1;
+}
+
+.bg-white {
+  background-color: $white;
+}
+
+[class*="brd-rad-"] {
+  overflow: hidden;
+}
+
+.brd-rad-l {
+  border-radius: $brd-rad-l;
+}
+
+.brd-rad-m {
+  border-radius: $brd-rad-m;
+}
+
+.brd-rad-s {
+  border-radius: $brd-rad-s;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.text-lighter {
+  color: $text-lighter;
+}
+
+.text-brightest {
+  color: $text-brightest;
+}
+
+.text-accent-1 {
+  color: $accent-1;
+}
+
+.text-accent-2 {
+  color: $accent-2;
+}
+
+.text-transform-none {
+  text-transform: none;
+}
+
+.font-weight-medium {
+  font-weight: 500;
+}
+
+.btn {
+  text-transform: uppercase;
+  font-weight: 500;
+  display: inline-block;
+  border-radius: $brd-rad-m;
+  color: $white;
+  transition: background-color .3s, border-color .3s, color .3s;
+  background-color: $black;
+  text-align: center;
+  padding: 8px 18px;
+  font-size: 14px;
+  min-width: 204px;
+  cursor: pointer;
+
+  @include media-breakpoint-up(xl) {
+    padding: 12px 24px;
+    min-width: 280px;
+    font-size: 16px;
+  }
+
+  &.link {
+    transition: background-color .5s, color .5s;
+
+    &:after {
+      color: $white;
+      transition: color .5s;
+    }
+  }
+
+  &:hover {
+    background-color: $accent-1;
+    color: $white;
+  }
+
+  &.show-more-btn {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &.btn-outline {
+    border: 1px solid $brd;
+    background-color: $white;
+    color: $accent-1;
+
+    &:hover, &.active {
+      //color: $white;
+      //background-color: $accent-1;
+      background-color: $brd;
+      border-color: $accent-1;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@mixin custom-scrollbar {
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: $bg-2;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba($accent-1, .9);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: $accent-1;
+  }
+
+  &::-webkit-scrollbar-thumb:active {
+    background: $accent-1;
+  }
+}

@@ -1,0 +1,141 @@
+@import "../bootstrap/functions";
+@import "../bootstrap/variables";
+@import "../bootstrap/mixins";
+@import "../partials/variables";
+
+
+#nef-search-form {
+  border-top-left-radius: $brd-rad-l;
+  border-top-right-radius: $brd-rad-l;
+
+  &.not-valid {
+    #nef-text {
+      &:focus-visible {
+        outline: 2px solid $accent-2;
+      }
+    }
+  }
+
+  #nef-submit {
+    left: 0;
+
+    &:disabled {
+      color: $text-brightest;
+    }
+  }
+
+  #nef-reset {
+    right: 0;
+    color: $text-brightest;
+  }
+
+  #nef-submit, #nef-reset {
+    border: 0;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    height: 100%;
+    transition: color .3s;
+    width: 3.1rem;
+
+    @include media-breakpoint-up(sm) {
+      width: 3.5rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: 4rem;
+    }
+
+    &:not(:disabled):hover {
+      color: $accent-2;
+    }
+  }
+
+  #nef-text {
+    border: 0;
+    background-color: transparent;
+    border-top-left-radius: $brd-rad-l;
+    border-top-right-radius: $brd-rad-l;
+    width: 100%;
+    transition: outline .3s;
+    outline: 2px solid transparent;
+    padding-left: 3.1rem;
+    padding-right: 3.1rem;
+
+    @include media-breakpoint-up(sm) {
+      padding-left: 3.5rem;
+      padding-right: 3.5rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+
+    &:focus {
+      outline: 2px solid $text;
+    }
+
+    &::placeholder {
+      color: $text-brightest;
+    }
+  }
+}
+
+.nef-group-title, .nef-item-title {
+  cursor: pointer;
+  transition: .3s;
+  padding-right: 3em;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+
+  &:before {
+    order: 1;
+    transition: .3s;
+    opacity: 0;
+    margin-left: 1rem;
+  }
+
+  &:hover {
+    color: $accent-2;
+
+    &:before {
+      opacity: 1;
+    }
+
+  }
+}
+
+.nef-item-description {
+  //padding-right: 3em;
+}
+
+.nef-group {
+
+  &.active {
+
+    .nef-group-title {
+      color: $accent-2;
+
+      &:before {
+        transform: scaleY(-1);
+      }
+    }
+  }
+}
+
+.nef-item {
+  &.active {
+    .nef-item-title {
+      &:before {
+        transform: scaleY(-1);
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+@import "../bootstrap/functions";
+@import "../bootstrap/variables";
+@import "../bootstrap/mixins";
+@import "../partials/variables";
+
+.agent-header {
+  .agent-thumbnail {
+    border-width: 3px;
+  }
+
+  .agent-position {
+    font-size: 20px;
+    color: $text-lighter;
+  }
+
+  .agent-excerpt {
+    color: $text-lighter;
+  }
+
+  .agent-social-list {
+    gap: 16px;
+
+    a {
+      font-size: 0;
+      width: 48px;
+      color: $text;
+      transition: .3s;
+
+      &:hover {
+        background-color: $text;
+        border-color: $text;
+        color: $white;
+      }
+
+      &:before {
+        font-size: 20px;
+      }
+    }
+  }
+
+}
